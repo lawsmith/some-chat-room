@@ -64,7 +64,7 @@ var onUserJoin = function(client) {
     console.log("[USER]" + ConnectedUsers[index].username + " Connected");
 
     // Send the user some joining data
-    var newMessage = "Welcome to the chat room. To change your user name, type '/user [name]'";
+    var newMessage = "Welcome to the chat room. To change your user name, type '/name [name]'";
     client.emit(newUserJoined, {
         msg : newMessage,
         sender : "server",
