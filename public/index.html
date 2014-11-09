@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Message</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+          <h1 id="title">Some Chat System v0.0.0.0.0.1</h1>
+        </header>
+
+        <section id="chat-box">
+          <!-- Holds all of the messages -->
+          <ul id="messages"></ul>
+
+          <!-- Input box for users to input messages -->
+          <form action="">
+            <input id="m" autocomplete="off" /><button>Send</button>
+          </form>
+        </section><!-- end #chat-box -->
+
+        <section id="users-box">
+          <h3>Online Users</h3>
+          <div id="users-list">
+          </div>
+        </section><!-- end #users-box -->
+    </div>
+
+    <!-- Load libraries -->
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Setup some global variables -->
+    <script>
+      var socket = io();
+      var enterMessage = false;
+    </script>
+    <!-- Load the rest of the js files -->
+    <script src="/js/connection.js"></script>
+</body>
+</html>

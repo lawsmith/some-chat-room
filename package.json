@@ -1,0 +1,22 @@
+{
+  "name": "Some Chat System",
+  "version": "0.0.5",
+  "description": "A very basic chat room application with Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.10.1",
+    "socket.io": "^1.2.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
