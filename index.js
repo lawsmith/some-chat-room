@@ -107,8 +107,9 @@ var onNewMessage = function(client, msg) {
                 case 'name' :
                     console.log(argument);
                     var oldUsername = ConnectedUsers[index].username;
-                    ConnectedUsers[index].username = argument;
-                    io.emit(newChatMessage, oldUsername + ' is now "' + argument + '"', "notice");
+                    var newUsername = argument.substring(0, 25);
+                    ConnectedUsers[index].username = newUsername;
+                    io.emit(newChatMessage, oldUsername + ' is now "' + newUsername + '"', "notice");
                     io.emit(updateUserList, ConnectedUsers);
                 break;
             }
