@@ -1,5 +1,5 @@
 {
-  "name": "Some Chat System",
+  "name": "some-chat-system",
   "version": "0.0.5",
   "description": "A very basic chat room application with Socket.io",
   "main": "index.js",
