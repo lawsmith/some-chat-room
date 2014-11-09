@@ -94,14 +94,34 @@ var onNewMessage = function(client, msg) {
         var index = arrayObjectIndexOf(ConnectedUsers, client.id, "id");
         var username = ConnectedUsers[index].username;
 
-        // Adds to message array
-        MessageList.push({
-            message : msg,
-            sender : username
-        });
+        // Check if it's a message or command
+        if (msg.substring(0,1) == '/') {
+            // The full input minus the '/' at the beginning
+            var input = msg.substring(1, msg.length);
+            // Get the command ie. "name"
+            var command = input.split(' ')[0];
+            // Get the argument for the command
+            var argument = input.split(' ')[1];
 
-        // Outputs to everyone
-        io.emit(newChatMessage, msg, username);
+            switch(command.split(' ')[0]) {
+                case 'name' :
+                    console.log(argument);
+                    var oldUsername = ConnectedUsers[index].username;
+                    ConnectedUsers[index].username = argument;
+                    io.emit(newChatMessage, oldUsername + ' is now "' + argument + '"', "notice");
+                    io.emit(updateUserList, ConnectedUsers);
+                break;
+            }
+        } else {
+            // Adds to message array
+            MessageList.push({
+                message : msg,
+                sender : username
+            });
+
+            // Outputs to everyone
+            io.emit(newChatMessage, msg, username);
+        }
 
         // Logs the message to the server
         console.log('[MESSAGE]' + ConnectedUsers[index].username + ': ' + msg);

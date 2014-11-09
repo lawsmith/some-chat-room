@@ -4,11 +4,20 @@
 // Write the message to the #message area
 var appendMessage = function(msg, user) {
   if (msg) {
-    var appendId = user=="server" ? '<li class="' + user + '">' : '<li class="user">';
-    if (user != "server") {
-        $('#messages').append($(appendId).html("<span>" + user + ":</span> ").append(msg));
-    } else {
-        $('#messages').append($(appendId).text(msg));
+    switch(user) {
+        case 'server':
+        case 'notice':
+            var appendId = '<li class="' + user + '">';
+            $('#messages').append($(appendId).text(msg));
+        break;
+        default:
+            var appendId = '<li class="user">';
+            $('#messages').append(
+                $(appendId)
+                    .html('<span class="name">' + user + ':</span> ')
+                    .append($('<span class="message">').html(msg))
+            );
+        break;
     }
     $('#messages').animate({ scrollTop: $('#messages')[0].scrollHeight }, 10);
   }

@@ -51,16 +51,25 @@ form {
   #messages li {
     padding: 5px 10px;
   }
-  #messages li:nth-child(odd) {
-    background: #eee;
-  }
   #messages li.server {
     background: #C8D29D;
   }
-  #messages li.user span {
+  #messages li.notice {
+    color: #9C9C9C;
+  }
+  #messages li.user span.name {
     color: #73434F;
     display: inline-block;
     padding: 2px 5px;
+  }
+  #messages li.user span.message {
+    color: #444;
+  }
+  #messages img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
   }
 
 #users-box {
