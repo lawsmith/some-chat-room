@@ -1,13 +1,18 @@
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+html,
 body {
-  font: 13px Helvetica, Arial;
+  font: 15px Helvetica, Arial;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-  width: 700px;
-  height: 250px;
+  width: 780px;
+  height: 100%;
   margin: 20px auto;
 }
 #title {
@@ -21,7 +26,7 @@ body {
 }
 
 #chat-box {
-  width: 500px;
+  width: 550px;
 }
 form {
   background: #000;
@@ -32,7 +37,7 @@ form {
   form input {
     border: 0;
     padding: 10px;
-    width: 79%;
+    width: 100%;
     margin-right: .5%;
   }
   form button {
@@ -43,7 +48,7 @@ form {
   }
 #messages {
   overflow-y: scroll;
-  height: 200px;
+  height: 250px;
   list-style-type:
   none; margin: 0;
   padding: 0;
@@ -52,7 +57,8 @@ form {
     padding: 5px 10px;
   }
   #messages li.server {
-    background: #C8D29D;
+    color: #4F8E50;
+    background: #CBEEB8;
   }
   #messages li.notice {
     color: #9C9C9C;
@@ -74,6 +80,8 @@ form {
 
 #users-box {
   width: 200px;
+  height: 335px;
+  overflow-y: scroll;
 }
   #users-box h3 {
     border-bottom: 1px dashed #000;

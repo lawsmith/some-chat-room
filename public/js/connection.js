@@ -8,7 +8,9 @@ var appendMessage = function(msg, user) {
         case 'server':
         case 'notice':
             var appendId = '<li class="' + user + '">';
-            $('#messages').append($(appendId).text(msg));
+            $('#messages').append(
+                $(appendId).text(msg).fadeIn(50)
+            );
         break;
         default:
             var appendId = '<li class="user">';
@@ -16,6 +18,7 @@ var appendMessage = function(msg, user) {
                 $(appendId)
                     .html('<span class="name">' + user + ':</span> ')
                     .append($('<span class="message">').html(msg))
+                    .fadeIn('fast')
             );
         break;
     }
