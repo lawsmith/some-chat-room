@@ -34,11 +34,17 @@
     <!-- Load libraries -->
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/emojify.js/emojify.min.js"></script>
 
     <!-- Setup some global variables -->
     <script>
       var socket = io();
       var enterMessage = false;
+
+      emojify.setConfig({
+        img_dir : '/emojify.js/images/emoji'
+      });
+      emojify.run();
     </script>
     <!-- Load the rest of the js files -->
     <script src="/js/connection.js"></script>

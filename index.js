@@ -7,15 +7,14 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var emojify = require('emojify.js');
 
 // Setup some defaults for the web server
 app.set('port', (process.env.PORT || 5000))
-app.set('/', express.static(__dirname + '/public'));
-app.set('/js', express.static(__dirname + '/public/js'));
-app.set('/css', express.static(__dirname + '/public/css'));
 
 // Create the Web Server
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/node_modules'));
 http.listen(app.get('port'), function() {
     console.log('Listening on *.' + app.get('port'));
 });

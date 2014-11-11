@@ -17,7 +17,7 @@ var appendMessage = function(msg, user) {
             $('#messages').append(
                 $(appendId)
                     .html('<span class="name">' + user + ':</span> ')
-                    .append($('<span class="message">').html(msg))
+                    .append($('<span class="message">').html(emojify.replace(msg)))
                     .fadeIn('fast')
             );
         break;

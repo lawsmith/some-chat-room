@@ -72,9 +72,10 @@ form {
     color: #444;
   }
   #messages img.emoji {
-    height: 1em;
-    width: 1em;
-    margin: 0 .05em 0 .1em;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    margin-bottom: -0.25em;
     vertical-align: -0.1em;
   }
 
