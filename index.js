@@ -113,6 +113,11 @@ var onNewMessage = function(client, msg) {
                 break;
             }
         } else {
+            // Make sure the messages array isn't too long
+            if (MessageList.length > 40) {
+                MessageList = MessageList.slice(MessageList.length-40, MessageList.length);
+            }
+
             // Adds to message array
             MessageList.push({
                 message : msg,
